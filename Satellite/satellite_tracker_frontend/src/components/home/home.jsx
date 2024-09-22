@@ -25,7 +25,7 @@ const satellitePositions = [
 ]
 
 function Home() {
-  const [selectedSatellite, setSelectedSatellite] = useState(0)
+  const [selectedSatellite, setSelectedSatellite] = useState(null)
 
   const handleSelectSatellite = (index) => {
     setSelectedSatellite(index)
