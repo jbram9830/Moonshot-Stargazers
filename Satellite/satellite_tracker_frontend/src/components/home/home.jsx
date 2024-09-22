@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { Viewer } from 'resium'
+import React, { useRef, useState } from 'react'
+import { CameraFlyTo, Viewer } from 'resium'
 import Satellite from '../satellite/satellite'
 import SatelliteInfo from './satelliteInfo'
+import { Cartesian3 } from 'cesium'
 
 const satellitePositions = [
   { 
@@ -26,9 +27,14 @@ const satellitePositions = [
 
 function Home() {
   const [selectedSatellite, setSelectedSatellite] = useState(null)
+  const [cameraDestination, setCameraDestination] = useState(null)
 
   const handleSelectSatellite = (index) => {
     setSelectedSatellite(index)
+    const satellite = satellitePositions[index]
+    const position = Cartesian3.fromDegrees(satellite.longitude + 0.2, satellite.latitude, satellite.height + 200000)
+
+    setCameraDestination(position)
   }
 
   return (
@@ -56,7 +62,15 @@ function Home() {
           satellitePositions={satellitePositions} 
           selectedSatellite={selectedSatellite}
         />
-      )}  
+      )} 
+      {cameraDestination && 
+      (
+      <CameraFlyTo
+        destination={cameraDestination}
+        duration={2}
+      /> 
+      )}
+      
     </Viewer>
   )
 }
