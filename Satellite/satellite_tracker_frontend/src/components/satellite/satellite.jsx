@@ -1,6 +1,6 @@
-import React, { useMemo, useState, useCallback } from 'react'
-import { Entity } from 'resium'
-import { Cartesian3, DistanceDisplayCondition, NearFarScalar, Color } from 'cesium'
+import React, { useMemo, useState, useCallback} from 'react'
+import { Entity, useCesium } from 'resium'
+import { Cartesian3, DistanceDisplayCondition, NearFarScalar, Color} from 'cesium'
 import { icons } from '../constants'
 import ReactDOMServer from 'react-dom/server'
 
@@ -8,7 +8,13 @@ export default function Satellite({ index, longitude, latitude, height, name, is
   const position = Cartesian3.fromDegrees(longitude, latitude, height)
   const groundPosition = Cartesian3.fromDegrees(longitude, latitude, 0)
 
-  const fillColor = isSelected ? '#fff800' : '#fff'
+  const [isHovered, setIsHovered] = useState(false)
+
+  const fillColor = useMemo(() => {
+    if (isSelected) return '#fff800'
+    if (isHovered) return '#fff800'
+    return '#fff'
+  },[isSelected, isHovered])
 
   const satelliteImageUrl = useMemo(() => {
     const svgString = ReactDOMServer.renderToStaticMarkup(<icons.SatelliteIcon fillColor={fillColor} />)
@@ -25,6 +31,8 @@ export default function Satellite({ index, longitude, latitude, height, name, is
       {/* Satellite */}
       <Entity
         onClick={handleClick}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         name={name}
         description='This is a satellite test'
         position={position}
