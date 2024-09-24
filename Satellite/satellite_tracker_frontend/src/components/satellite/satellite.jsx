@@ -3,6 +3,7 @@ import { Entity, useCesium } from 'resium'
 import { Cartesian3, DistanceDisplayCondition, NearFarScalar, Color} from 'cesium'
 import { icons } from '../constants'
 import ReactDOMServer from 'react-dom/server'
+import Tooltip from './tooltip'
 
 export default function Satellite({ index, longitude, latitude, height, name, isSelected, onSelect}) {
   const position = Cartesian3.fromDegrees(longitude, latitude, height)
@@ -11,8 +12,7 @@ export default function Satellite({ index, longitude, latitude, height, name, is
   const [isHovered, setIsHovered] = useState(false)
 
   const fillColor = useMemo(() => {
-    if (isSelected) return '#fff800'
-    if (isHovered) return '#fff800'
+    if(isSelected || isHovered) return '#fff800'
     return '#fff'
   },[isSelected, isHovered])
 
@@ -56,6 +56,10 @@ export default function Satellite({ index, longitude, latitude, height, name, is
             distanceDisplayCondition: new DistanceDisplayCondition(0, 100.0e7),
           }}
         />
+      )}
+      {isHovered && !isSelected && 
+      (
+        <Tooltip name={name}/>
       )}
     </>
   )
