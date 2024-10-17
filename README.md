@@ -28,9 +28,9 @@ As of 10/17/2024, we have implemented requirements 1, 2, 3, and 4 above. We have
 1. View a 2D visualization of the Earth and its atmosphere.
 2. Allow users to search for locations or landmarks. When the location or landmark is identified, the application will automatically zoom in to it in the visualization.
 3. Allow users to zoom out fully by clicking the Home button.
-4. When a satellite in the visualization is clicked, its name, longitude, latitude, and height are displayed.
+4. When a satellite in the visualization is clicked, its name, longitude, latitude, and altitude are displayed.
 
-Our next focus will be tackling requirement 8. As part of this requirement, we will also create loading page. 
+Our next focus will be tackling requirement 8. As part of this requirement, we will also create a loading page. 
 
 ### Branches
 **If code is in more than one branch (for example, alternative implementations, features not yet integrated, experimental code, etc.), list the additional branches I should review and explain what is in them.**
