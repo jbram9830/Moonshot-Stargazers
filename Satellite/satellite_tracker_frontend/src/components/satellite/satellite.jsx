@@ -5,6 +5,7 @@ import { icons } from '../constants'
 import ReactDOMServer from 'react-dom/server'
 import Tooltip from './tooltip'
 
+// eslint-disable-next-line react/prop-types
 export default function Satellite({ index, longitude, latitude, height, name, isSelected, onSelect}) {
   const position = Cartesian3.fromDegrees(longitude, latitude, height)
   const groundPosition = Cartesian3.fromDegrees(longitude, latitude, 0)
@@ -57,7 +58,7 @@ export default function Satellite({ index, longitude, latitude, height, name, is
           }}
         />
       )}
-      {isHovered && !isSelected && 
+      {isHovered && !isSelected &&
       (
         <Tooltip name={name}/>
       )}
