@@ -1,78 +1,115 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CameraFlyTo, Viewer } from 'resium'
 import Satellite from '../satellite/satellite'
 import SatelliteInfo from './satelliteInfo'
 import { Cartesian3 } from 'cesium'
+import * as satellite from 'satellite.js';
 
-const satellitePositions = [
-  { 
-    name: 'Satellite1',
-    longitude: -95.9345,
-    latitude: 41.2565,
-    height: 1000000,
-  },
-  {
-    name: 'Satellite2',
-    longitude: -112.0740,
-    latitude: 33.4484,
-    height: 2000000,
-  },
-  {
-    name: 'Satellite3',
-    longitude: -80.1918,
-    latitude: 25.7617,
-    height: 700000,
-  }
-]
+// Update the path to your TLE data JSON file
+const TLE_DATA_URL = '/src/components/home/TLE_data.json';
 
 function Home() {
-  const [selectedSatellite, setSelectedSatellite] = useState(null)
-  const [cameraDestination, setCameraDestination] = useState(null)
+    const [selectedSatellite, setSelectedSatellite] = useState(null);
+    const [cameraDestination, setCameraDestination] = useState(null);
+    const [realTimePositions, setRealTimePositions] = useState([]);
+    const [satellitePositions, setSatellitePositions] = useState([]); // State for satellite positions
 
-  const handleSelectSatellite = (index) => {
-    setSelectedSatellite(index)
-    const satellite = satellitePositions[index]
-    const position = Cartesian3.fromDegrees(satellite.longitude + 0.2, satellite.latitude, satellite.height + 200000)
+    useEffect(() => {
+        // Fetch TLE data from the JSON file
+        const fetchTleData = async () => {
+            try {
+                const response = await fetch(TLE_DATA_URL);
+                const data = await response.json(); // Parse JSON data
+                console.log('Fetched TLE Data:', data); // Log the fetched data
 
-    setCameraDestination(position)
-  }
+                // Update satellite positions state
+                setSatellitePositions(data);
+            } catch (error) {
+                console.error('Error fetching TLE data:', error);
+            }
+        };
 
-  return (
-    <Viewer 
-      full
-      infoBox={false}
-      selectionIndicator={false}
-      timeline={false}
-      animation={false}
-    >
-      {satellitePositions.map((satellite, index) => (
-        <Satellite 
-          key={index} 
-          index={index} 
-          name={satellite.name} 
-          longitude={satellite.longitude} 
-          latitude={satellite.latitude} 
-          height={satellite.height} 
-          isSelected={selectedSatellite === index} 
-          onSelect={handleSelectSatellite}
-        />
-      ))}   
-      {selectedSatellite !== null && (
-        <SatelliteInfo 
-          satellitePositions={satellitePositions} 
-          selectedSatellite={selectedSatellite}
-        />
-      )} 
-      {cameraDestination && 
-      (
-      <CameraFlyTo
-        destination={cameraDestination}
-        duration={2}
-      /> 
-      )}
-      
-    </Viewer>
-  )
+        fetchTleData(); // Fetch the TLE data on component mount
+    }, []);
+
+    useEffect(() => {
+        const updateSatellitePositions = () => {
+            const newPositions = satellitePositions.map((sat) => {
+                if (sat.tle && sat.tle.length === 2) {
+                    // Calculate real-time position from TLE
+                    const satrec = satellite.twoline2satrec(sat.tle[0], sat.tle[1]);
+                    const now = new Date();
+                    const positionAndVelocity = satellite.propagate(satrec, now);
+                    const positionEci = positionAndVelocity.position;
+
+                    if (!positionEci) {
+                        return null;  // Handle case where TLE propagation fails
+                    }
+
+                    const gmst = satellite.gstime(now);
+                    const positionGd = satellite.eciToGeodetic(positionEci, gmst);
+
+                    const longitude = satellite.degreesLong(positionGd.longitude);
+                    const latitude = satellite.degreesLat(positionGd.latitude);
+                    const height = positionGd.height * 1000;  // Convert from km to meters
+
+                    return { longitude, latitude, height };
+                } else {
+                    return null; // Handle cases where TLE is missing or invalid
+                }
+            });
+
+            setRealTimePositions(newPositions.filter(pos => pos)); // Filter out nulls
+        };
+
+        // Update positions every second
+        const interval = setInterval(updateSatellitePositions, 1000);
+        return () => clearInterval(interval);
+    }, [satellitePositions]); // Depend on satellitePositions
+
+    const handleSelectSatellite = (index) => {
+        setSelectedSatellite(index);
+        const satellite = realTimePositions[index];
+        const position = Cartesian3.fromDegrees(satellite.longitude, satellite.latitude, satellite.height + 200000);
+        setCameraDestination(position);
+    };
+
+    return (
+        <Viewer
+            full
+            infoBox={false}
+            selectionIndicator={false}
+            timeline={false}
+            animation={false}
+        >
+            {realTimePositions.map((satellite, index) => (
+                satellite && (
+                    <Satellite
+                        key={index}
+                        index={index}
+                        name={satellitePositions[index].name}
+                        longitude={satellite.longitude}
+                        latitude={satellite.latitude}
+                        height={satellite.height}
+                        isSelected={selectedSatellite === index}
+                        onSelect={handleSelectSatellite}
+                    />
+                )
+            ))}
+            {selectedSatellite !== null && (
+                <SatelliteInfo
+                    satellitePositions={satellitePositions}
+                    selectedSatellite={selectedSatellite}
+                />
+            )}
+            {cameraDestination && (
+                <CameraFlyTo
+                    destination={cameraDestination}
+                    duration={2}
+                />
+            )}
+        </Viewer>
+    );
 }
 
-export default Home
+export default Home;
