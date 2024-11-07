@@ -33,6 +33,22 @@ The following is a list of requirements we wish to implement by the end of the s
 11. Allow users to perform future projection.
 12. Allow users to perform CRUD operations on satellite data (including adding a new satellite to the visualization).
 
+## Milestone 2
+### What is the application? How do you use it?
+**Explain what the application is all about and how to use it.**
+
+TODO.
+
+### Release Notes
+**Explain what is working in this submission (add an explanation if this is not consistent with the milestone as described in the project plan).**
+
+TODO.
+
+### Branches
+**If code is in more than one branch (for example, alternative implementations, features not yet integrated, experimental code, etc.), list the additional branches I should review and explain what is in them.**
+
+TODO.
+
 ## Milestone 1
 ### What is the application? How do you use it?
 **Explain what the application is all about and how to use it.**
@@ -47,7 +63,7 @@ Our application is deployed on an Amazon EC2 server and can be accessed [here](h
 By Milestone 1, we aimed to set up our local development environments, get a globe visualization to run on our EC2 server, and identify data source(s). By Milestone 2, we aimed to successfully scrape satellite data and display mock satellite data as data points on the globe visualization. Although we have not followed our project plan exactly, we are currently well ahead of schedule and working on Milestone 3. This involves showing orbital paths of satellites using real-time data (not mock data) that updates regularly through web socket integration. 
     
 As of 10/17/2024, we have implemented requirements 1, 2, 3, and 4 above (see the Functional Requirements section). We have also implemented the following four requirements that were not part of our original project plan:
-1. View a 2D visualization of the Earth and its atmosphere.
+1. View a 2D visualization of the Earth and its atmosphere in different map styles.
 2. Allow users to search for locations or landmarks. When the location or landmark is identified, the application will automatically zoom in to it in the visualization.
 3. Allow users to zoom out fully by clicking the Home button.
 4. When a satellite in the visualization is clicked, its name, longitude, latitude, and altitude are displayed.
