@@ -15,7 +15,7 @@ The boundaries between milestones are fuzzy. For instance, while Milestone 4 is 
 
 **Milestone 4:** finalize visualization settings and capabilities, including rotating, zooming, and filtering; field of view; collision notification; analytics and future projection; and CRUD operations (finish UI between Milestones 1 and 4) 
 
-**Milestone 5:** debug, test, and refine our application as built thus far
+**Milestone 5 (final submission):** debug, test, and refine our application as built thus far
 
 ## Functional Requirements
 
@@ -33,13 +33,35 @@ The following is a list of requirements we wish to implement by the end of the s
 11. Allow users to perform future projection.
 12. Allow users to perform CRUD operations on satellite data (including adding a new satellite to the visualization).
 
+## Milestone 2
+### What is the application? How do you use it?
+**Explain what the application is all about and how to use it.**
+
+This application is a satellite visualization tool created by the UNO Fall 2024 CSCI4970-001 capstone group Moonshot Stargazers (NGR03) in collaboration with Northrop Grumman. Our end goal is to display real-time satellite data on a globe visualization, giving users the ability to navigate within the visualization, perform CRUD operations, predict collisions, and more. 
+
+Our application is deployed on an Amazon EC2 server and can be accessed [here](http://35.173.229.2:3000/). Note that the link may not work if our server is not running. We will provide more details on how to deploy the application in future milestones and our final report. 
+
+### Release Notes
+**Explain what is working in this submission (add an explanation if this is not consistent with the milestone as described in the project plan).**
+
+By Milestone 2, we originally aimed to scrape live satellite data and display mock satellite data as data points on a globe visualization. However, we largely met our Milestone 2 goals during Milestone 1, so after Milestone 1, we decided to focus on our Milestone 3 goals, which included showing the orbital paths of satellites using real-time data that updates regularly through web socket integration. We also considered designing a loading page to display while the initial satellite data is fetched and each satellite object is rendered. 
+
+As of 11/09/2024, our application successfully shows the real-time movement of satellites within our globe visualization. All features added during Milestone 1 remain working. To summarize, in addition to the functional requirements met during Milestone 1 (1, 2, 3, 4, and others not initially specified), we have now met requirement 8 (see list above). Because the satellite data and objects load quickly enough, we decided not to create a loading page.
+
+Moving forward, we aim to do two things: fix bugs and add new features. Our application has two significant bugs. First, once a satellite is clicked on, we are unable to deselect it and zoom out. Second, once a satellite is clicked on, its latitude, longitude, and altitude data should populate in a box in the bottom left corner of the screen. The data is not currently populating. In addition to fixing these two bugs, we aim to complete the original goals of Milestone 3. While our satellite objects move in real-time based on TLE data, we have not yet coded lines indicating their orbital paths. Once we finish these three tasks, we plan to move on to the requirements initially specified for Milestone 4. These include filtering, CRUD operations (e.g., insert or delete a satellite object), collision detection, and future projection. These roughly correspond to requirements 5-7 and 9-12 in the list above. While we do not plan to have all requirements complete by the next milestone, we would like to have made progress on several of them. 
+
+### Branches
+**If code is in more than one branch (for example, alternative implementations, features not yet integrated, experimental code, etc.), list the additional branches I should review and explain what is in them.**
+
+All code for Milestone 2 is in the master branch (it is the only branch that must be reviewed). The Coding_Two branch was used during the development of the Milestone 2 features. 
+
 ## Milestone 1
 ### What is the application? How do you use it?
 **Explain what the application is all about and how to use it.**
 
 This application is a satellite visualization tool created by the UNO Fall 2024 CSCI4970-001 capstone group Moonshot Stargazers (NGR03) in collaboration with Northrop Grumman. Our end goal is to display real-time satellite data on a globe visualization, giving users the ability to navigate within the visualization, perform CRUD operations, predict collisions, and more. 
 
-Our application is deployed on an Amazon EC2 server and can be accessed [here](http://35.173.229.2:3000/). We will provide more details on how to deploy the application in future milestones and our final report. 
+Our application is deployed on an Amazon EC2 server and can be accessed [here](http://35.173.229.2:3000/). Note that the link may not work if our server is not currently running. We will provide more details on how to deploy the application in future milestones and our final report. 
 
 ### Release Notes
 **Explain what is working in this submission (add an explanation if this is not consistent with the milestone as described in the project plan).**
@@ -47,7 +69,7 @@ Our application is deployed on an Amazon EC2 server and can be accessed [here](h
 By Milestone 1, we aimed to set up our local development environments, get a globe visualization to run on our EC2 server, and identify data source(s). By Milestone 2, we aimed to successfully scrape satellite data and display mock satellite data as data points on the globe visualization. Although we have not followed our project plan exactly, we are currently well ahead of schedule and working on Milestone 3. This involves showing orbital paths of satellites using real-time data (not mock data) that updates regularly through web socket integration. 
     
 As of 10/17/2024, we have implemented requirements 1, 2, 3, and 4 above (see the Functional Requirements section). We have also implemented the following four requirements that were not part of our original project plan:
-1. View a 2D visualization of the Earth and its atmosphere.
+1. View a 2D visualization of the Earth and its atmosphere in different map styles.
 2. Allow users to search for locations or landmarks. When the location or landmark is identified, the application will automatically zoom in to it in the visualization.
 3. Allow users to zoom out fully by clicking the Home button.
 4. When a satellite in the visualization is clicked, its name, longitude, latitude, and altitude are displayed.
