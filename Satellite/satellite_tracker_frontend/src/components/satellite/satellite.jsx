@@ -98,7 +98,7 @@ export default function Satellite({ index, longitude, latitude, elevation, name,
         position={position}
         billboard={{
           image: satelliteImageUrl,
-          scale: 0.3,
+          scale: isSelected  ? 0.9 : 0.3,
           horizontalOrigin: 0,
           verticalOrigin: 0,
           scaleByDistance: new NearFarScalar(1.5e6, 1.0, 2.0e7, 0.1),
