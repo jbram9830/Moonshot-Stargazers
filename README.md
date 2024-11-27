@@ -54,7 +54,7 @@ In the next milestone, our team aims to fix existing bugs such as certain satell
 ### Branches
 **If code is in more than one branch (for example, alternative implementations, features not yet integrated, experimental code, etc.), list the additional branches I should review and explain what is in them.**
 
-There are currently two branches in our repository including the master branch and Coding_Two branch. In order to view the features showcased within the demo for Milestone 3, please review the Coding_Two branch. The master branch currently contains an alternative version of our application that aims to improve overall usability and performance by lessening the burden on the application front end.
+There are currently two branches in our repository, including the master branch and Coding_Two branch. In order to view the features showcased within the demo for Milestone 3, please review the Coding_Two branch. The master branch currently contains an alternative version of our application that aims to improve overall usability and performance by lessening the burden on the application front end.
 
 
 ## Milestone 2
