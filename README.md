@@ -46,11 +46,12 @@ Our application is deployed on an Amazon EC2 server and can be accessed [here](h
 
 11/26/2024
 
-In milestone 3 we aimed to implement visualization of the orbital path of satellites and to use real-time data instead of mock data that is regularly updated via web socket integration.
+In Milestone 3 we aimed to implement visualization of the orbital paths of satellites and to use real-time data instead of mock data that is regularly updated via web socket integration.
 
-Milestone 3 successfully implements the orbital paths of satellites, which are viewable to the user upon clicking on a given satellite. Some orbital paths display irregularly, but it was confirmed with the sponsor that this can be a normal occurrence for some satellite objects. Additionally, this milestone retains the successful implementation of real-time satellite data, with the addition that the TLE data is now propagated every 5 minutes over a 24-hour interval to reflect the full orbital path of a satellite. Additionally, functional requirements 10 and 12 have also been met within milestone 3, both of which were originally planned for milestone 4. Users can now interact with the "Add a New Satellite" box in the top left of the application in order to input a new satellite into the application. Upon successful input from the user (2-complete lines of TLE data and a selected name), a new satellite will be added and the TLE data (and calculated propagation for orbital paths) will be compared in order to detect a collision. If there is a collision detected, the user will be met with a popup notifying them of the detection as well as an additional box that lists specific details pertaining to where each potential collision was detected. 
+Milestone 3 successfully displays the orbital paths of satellites, which are viewable to the user upon clicking on a given satellite. Some orbital paths display irregularly, but we confirmed with the sponsors that this may be normal for some satellite objects. Additionally, this milestone retains the successful implementation of real-time satellite data, with the addition that the TLE data is now propagated every 5 minutes over a 24-hour interval to reflect the full orbital path of a satellite. Functional requirements 10 and 12 have also been met within Milestone 3, both of which were originally planned for Milestone 4. Users can now interact with the "Add a New Satellite" box in the top left of the application in order to input a new satellite into the application. Upon successful input from the user (two complete lines of TLE data and a selected name), a new satellite is added and the TLE data and calculated propagation for orbital paths are compared in order to detect collisions. If a collision is detected, the user is shown a popup notifying them of the detection as well as an additional box that lists specific details pertaining to where each potential collision was detected. 
 
-In the next milestone, our team aims to fix existing bugs such as certain satellite data not populating (Longitude, latitude, height) in the satellite information box when one is selected. Additionally, we are still working towards a solution for the complete deselection of a satellite. Our sponsors provided us with a priority list for the remainder of the project, which our team is dedicated to achieving by the final milestone. The priority list includes the following (in order): 1. Filtering, 2. Deploying the project as a containerized app (for a customer), 3. Polish and improve existing features and UI, 4. Field of view visualization, and 5. Testing and merging branches to obtain a final and complete version.
+In the next milestone, our team aims to fix existing bugs such as certain satellite data not populating (longitude, latitude, height) in the satellite information box when one is selected. Additionally, we are still working towards a solution for the complete deselection of a satellite. Our sponsors provided us with a priority list for the remainder of the project, which our team is dedicated to achieving by the final milestone. The priority list includes the following (in order): 1. Filtering, 2. Deploying the project as a containerized app (for a customer), 3. Polishing and improving existing features and UI, 4. Field of view visualization, and 5. Testing and merging branches to obtain a final and complete version.
+
 ### Branches
 **If code is in more than one branch (for example, alternative implementations, features not yet integrated, experimental code, etc.), list the additional branches I should review and explain what is in them.**
 
@@ -67,6 +68,8 @@ Our application is deployed on an Amazon EC2 server and can be accessed [here](h
 
 ### Release Notes
 **Explain what is working in this submission (add an explanation if this is not consistent with the milestone as described in the project plan).**
+
+11/09/2024
 
 By Milestone 2, we originally aimed to scrape live satellite data and display mock satellite data as data points on a globe visualization. However, we largely met our Milestone 2 goals during Milestone 1, so after Milestone 1, we decided to focus on our Milestone 3 goals, which included showing the orbital paths of satellites using real-time data that updates regularly through web socket integration. We also considered designing a loading page to display while the initial satellite data is fetched and each satellite object is rendered.
 
@@ -89,6 +92,8 @@ Our application is deployed on an Amazon EC2 server and can be accessed [here](h
 
 ### Release Notes
 **Explain what is working in this submission (add an explanation if this is not consistent with the milestone as described in the project plan).**
+
+10/17/2024
 
 By Milestone 1, we aimed to set up our local development environments, get a globe visualization to run on our EC2 server, and identify data source(s). By Milestone 2, we aimed to successfully scrape satellite data and display mock satellite data as data points on the globe visualization. Although we have not followed our project plan exactly, we are currently well ahead of schedule and working on Milestone 3. This involves showing orbital paths of satellites using real-time data (not mock data) that updates regularly through web socket integration.
 
