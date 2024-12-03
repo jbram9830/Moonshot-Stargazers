@@ -1,6 +1,9 @@
 # Moonshot-Stargazers
+## Milestone Demo Videos
 
-[Watch our Milestone demos](https://unomail-my.sharepoint.com/:f:/g/personal/ageringer_unomaha_edu/EgiYl_lkVWNMus9zslX6nB4BH50DzGCMRvxYBF1uR3aBTQ?e=DelJOq)
+[Milestone 1](https://unomail-my.sharepoint.com/:v:/g/personal/ageringer_unomaha_edu/ETFxJY6_DKJDvMeYoD3-ScABbDWUxBSEOC7KpHbxyNv1nA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Nbld6z)
+[Milestone 2](https://unomail-my.sharepoint.com/:u:/g/personal/ageringer_unomaha_edu/EVQrkuLIZ81HtdeWwr-A-OABnSq9_CPl9FO2IVa61PN0TQ?e=xOMYdx)
+[Milestone 3](https://unomail-my.sharepoint.com/:u:/g/personal/ageringer_unomaha_edu/EVhI3BW2HN5OjkPkmJQf5cMBnGURlSrv33VA7pbrthMBXw?e=cntZD7)
 
 ## Project Plan
 
