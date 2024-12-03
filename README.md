@@ -1,4 +1,7 @@
 # Moonshot-Stargazers
+
+[Watch our Milestone demos](https://unomail-my.sharepoint.com/:f:/g/personal/ageringer_unomaha_edu/EgiYl_lkVWNMus9zslX6nB4BH50DzGCMRvxYBF1uR3aBTQ?e=DelJOq)
+
 ## Project Plan
 
 Our project development is divided into five milestones listed below. Because many of the milestones encapsulate broad goals, we will divide each milestone into subtasks for individual members or groups of members to work on. The creation of subtasks and division of work will be determined as we begin each milestone.
