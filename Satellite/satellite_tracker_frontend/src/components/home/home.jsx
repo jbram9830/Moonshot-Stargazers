@@ -270,6 +270,34 @@ function Home() {
                 <button type="submit">Add Satellite</button>
             </form>
 
+            {/* Dropdown to select a satellite */}
+            <div
+                style={{
+                    position: 'absolute',
+                    zIndex: 1,
+                    background: 'white',
+                    padding: '10px',
+                    margin: '10px',
+                    top: '1%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)', // Centers the element both horizontally and vertically
+                    borderRadius: '8px', // Optional: to round the corners
+                }}
+            >
+                <h3>Select Satellite</h3>
+                <select
+                    onChange={(e) => handleSelectSatellite(Number(e.target.value))}
+                    value={selectedSatellite || ''}
+                >
+                    <option value="">Select a Satellite</option>
+                    {satellitePositions.map((sat, index) => (
+                        <option key={index} value={index}>
+                            {sat.name}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
             {collisions.length > 0 && (
                 <div
                     style={{
