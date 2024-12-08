@@ -8,6 +8,8 @@
 
 [Milestone 3 Demo](https://unomail-my.sharepoint.com/:u:/g/personal/ageringer_unomaha_edu/EVhI3BW2HN5OjkPkmJQf5cMBnGURlSrv33VA7pbrthMBXw?e=cntZD7)
 
+[Milestone 4 Demo](https://unomail-my.sharepoint.com/:v:/r/personal/ageringer_unomaha_edu/Documents/Recordings/Moonshot%20Stargazers%20-%20Milestone%204.mp4?csf=1&web=1&e=DqmulX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
 
 ## Project Plan
 
@@ -42,6 +44,29 @@ The following is a list of requirements we wish to implement by the end of the s
 10. Simulate, predict, and be notified of collisions.
 11. Allow users to perform future projection.
 12. Allow users to perform CRUD operations on satellite data (including adding a new satellite to the visualization).
+
+
+## Milestone 4
+### What is the application? How do you use it?
+**Explain what the application is all about and how to use it.**
+
+This application is a satellite visualization tool created by the UNO Fall 2024 CSCI4970-001 capstone group Moonshot Stargazers (NGR03) in collaboration with Northrop Grumman. Our end goal is to display real-time satellite data on a globe visualization, giving users the ability to navigate within the visualization, perform CRUD operations, predict collisions, and more.
+
+Our application is deployed on an Amazon EC2 server and can be accessed [here](http://35.173.229.2:3000/). Note that the link may not work if our server is not running. We will provide more details on how to deploy the application in future milestones and our final report.
+
+### Release Notes
+**Explain what is working in this submission (add an explanation if this is not consistent with the milestone as described in the project plan).**
+
+12/07/2024
+
+During Milestone 4 we completed the satellite filtering feature. This was the last main feature that our sponsors wanted our team to complete before the end of the semester. Moving forward, we have two goals:
+First, we want to polish our project, including fixing a bug where the latitude, longitude, and altitude data for each satellite is not displaying in the bottom-left information box. Our second goal is to finish deploying the project on our AWS server, as we've primarily been working in our local environments. On the side, we will also work on testing. 
+
+### Branches
+**If code is in more than one branch (for example, alternative implementations, features not yet integrated, experimental code, etc.), list the additional branches I should review and explain what is in them.**
+
+There are currently two branches in our repository, including the master branch and Coding_Two branch. In order to view the features showcased within the demo for Milestone 4, please review the Coding_Two branch. The master branch currently contains an alternative version of our application that aims to improve overall usability and performance by lessening the burden on the application front end.
+
 
 ## Milestone 3
 ### What is the application? How do you use it?
