@@ -1,6 +1,0 @@
-vite + react + tailwindscss initialized frontend project
-npm i react-router-dom 
-npm i axios
-npm install --save cesium resium
-npm install --save-dev vite-plugin-cesium
-npm i react-dom

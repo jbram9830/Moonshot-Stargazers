@@ -7,6 +7,7 @@ import axios from '../api/api'
 import satelliteWebSocket from '../websocket/socket'
 import { icons } from '../constants'
 import SearchSuggestions from '../searchSuggestions/searchSuggestions'
+import Panel from '../panel/panel'
 
 // Configuration constants
 const UPDATE_INTERVAL = 1000
@@ -15,6 +16,7 @@ const CONNECTION_CHECK_INTERVAL = 5000
 
 function Home() {
   // State management
+  const [isPanelOpen, setIsPanelOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [satellitePositions, setSatellitePositions] = useState(new Map())
   const [selectedSatellite, setSelectedSatellite] = useState(null)
@@ -325,9 +327,17 @@ function Home() {
           }
         }}
       >
+
+        {/*Panel to add satellite*/}
+        {isPanelOpen && 
+        (
+          <Panel setIsPanelOpen={setIsPanelOpen}/>
+        )}
+
         {/* Header and Search */}
         <div className='absolute w-full top-0 left-0 z-10 flex-col'>
-          <div className='w-full p-4 bg-white flex border-b-2 border-blue-500'>
+          <div className='w-full p-4 bg-white flex justify-between border-b-2 border-blue-500'>
+          <div className='flex flex-row'>
             <h1 className='text-[24px] font-bold'>Moonshot-Stargazers</h1>
             <div className='relative search-container outline outline-2 outline-blue-500 ml-4 rounded-lg'>
               <input 
@@ -347,6 +357,11 @@ function Home() {
                 searchQuery={searchQuery}
                 onSelect={handleSelectSuggestion}
               />
+            </div>
+            </div>
+            {/*menu*/}
+            <div onClick={() => setIsPanelOpen(true)} className='flex justify-center items-center p-2 rounded-full hover:cursor-pointer'> 
+              <icons.HamburgerIcon width={'20'} height={'20'} color={'white'}/>
             </div>
           </div>
           
