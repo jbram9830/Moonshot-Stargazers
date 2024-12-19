@@ -51,6 +51,52 @@ The following is a list of requirements we wish to implement by the end of the s
 11. Allow users to perform future projection.
 12. Allow users to perform CRUD operations on satellite data (including adding a new satellite to the visualization).
 
+## Milestone 5
+### What is the application? How do you use it?
+**Explain what the application is all about and how to use it.**
+
+This application is a satellite visualization tool created by the UNO Fall 2024 CSCI4970-001 capstone group Moonshot Stargazers (NGR03) in collaboration with Northrop Grumman. Our end goal is to display real-time satellite data on a globe visualization, giving users the ability to navigate within the visualization, perform CRUD operations, predict collisions, and more.
+
+Our application is deployed on an Amazon EC2 server and can be accessed [here](http://35.173.229.2:3000/). Note that the link may not work if our server is not running.
+
+Run the application:
+1. Download the GitHub zip folder.
+2. Extract the contents of the zip folder.
+3. Open the extracted folder in an IDE like Visual Studio.
+4. Install Node.js and Java.
+5. If you are using Visual Studio, install an addon called Live Server.
+6. Click on terminal and make sure your directory is in the contents of the extracted folder.
+7. Type in the terminal capital S, hit tab and click enter.
+8. Type in the terminal lowercase s, hit tab and click enter.
+9. Install the required dependencies by typing npm run dev.
+10. Copy the link and paste it into your browser. 
+
+A note on testing: We performed manual tests only. We also relied on feedback from our sponsors.
+
+### Release Notes
+**Explain what is working in this submission (add an explanation if this is not consistent with the milestone as described in the project plan).**
+
+12/19/2024
+
+The following is a list of what is working in the final submission:
+1. Render the 3D and 2D globe
+2. Rotate
+3. Zoom in and out
+4. Choose multiple map styles
+5. Click the home button to return to the default view
+6. Search for locations on the globe
+7. Select and deselect satellites by clicking on them
+8. Display satellite name, longitude, latitude, and altitude in the information box
+9. Show real-time satellite locations
+10. Show real-time satellite orbital paths
+11. Select a satellite with the filtering dropdown
+12. Inject a satellite object into the application
+13. Notify users of collisions
+
+### Branches
+**If code is in more than one branch (for example, alternative implementations, features not yet integrated, experimental code, etc.), list the additional branches I should review and explain what is in them.**
+
+There are currently two branches in our repository, including the master branch and Coding_Two branch. In order to view the features showcased within the demo for Milestone 5, please review the Coding_Two branch. The master branch currently contains an alternative version of our application that aims to improve overall usability and performance by lessening the burden on the application front end.
 
 ## Milestone 4
 ### What is the application? How do you use it?
