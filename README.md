@@ -10,6 +10,12 @@
 
 [Milestone 4 Demo](https://unomail-my.sharepoint.com/:v:/r/personal/ageringer_unomaha_edu/Documents/Recordings/Moonshot%20Stargazers%20-%20Milestone%204.mp4?csf=1&web=1&e=DqmulX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
+[Milestone 5 Long Demo](https://unomail-my.sharepoint.com/:v:/r/personal/ageringer_unomaha_edu/Documents/Recordings/Milestone%205.mp4?csf=1&web=1&e=i8Vn5f&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+[Milestone 5 Short Demo](https://unomail-my.sharepoint.com/:v:/r/personal/ageringer_unomaha_edu/Documents/Recordings/connect-20241215_204933-Meeting%20Recording.mp4?csf=1&web=1&e=edefAo&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+[Milestone 5 Poster Presentation](https://unomail-my.sharepoint.com/:v:/r/personal/ageringer_unomaha_edu/Documents/Capstone%20-%20Moonshot%20Stargazers/Presentations/Poster%20Presentation_NGR03.mp4?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=W6qniV)
+
 
 ## Project Plan
 
